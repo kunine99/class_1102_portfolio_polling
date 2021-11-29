@@ -11,42 +11,37 @@
 </head>
 
 <body>
-
-
-    <div class="jumbotron">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
-                </div>
-            </div>
-        </div>
+<div class="jumbotron">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
     </div>
-
-
-
-    <?php
+    <div class="carousel-item">
+      <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+    </div>
+  </div>
+</div>
+</div>    
+<?php
+    
 
     // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
     $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
     $file = $do . ".php";
-    // $file =  "./frontend".$do.".php";
     if (file_exists($file)) {
         include $file;
     } else {
         // 如果沒有的話直接載入 add_subject_form
-        // include "add_subject_form.php";
-        include "./frontend/show_vote_list.php";
+        include "add_subject_form.php";
+
     }
 
     ?>
-    <div class="p-3 text-center text-light bg-primary fixed-bottom">mack版權所有、歡迎盜用</div>
+<div class="p-3 text-center text-light bg-primary fixed-bottom">mack版權所有、歡迎盜用</div>
 
     <!-- 
     要控制元件必須要有東西存在，如果前面東西還沒存在就放就沒用

@@ -5,20 +5,32 @@
 
 // }
 
-
-$dsn = "mysql:host=localhost;charset=utf8;dbname=students";
+//填資料庫名稱
+$dsn = "mysql:host=localhost;charset=utf8;dbname=myvote";
 $pdo = new PDO($dsn, 'root', '');
 
+//取得符合條件的一筆資料
 function find($table, $id)
 {
     global $pdo;
-    $sql = "SELECT * FROM `$table` WHERE `id`='$id'";
+    // $sql = "SELECT * FROM `$table` WHERE `id`='$id'";
+    $sql="SELECT * FROM `$table` WHERE ";
+
+    if(is_array($id)){
+        foreach($id as $key=>$value){
+            $tmp[]="`$key`='$value'";
+        }
+        
+        $sql=$sql. implode(" AND ",$tmp);
+    }else{
+       $sql=$sql . "`id`='$id'";
+    }
 
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
 
-//取出指定資料表的所有資料
+// 取出指定資料表的所有資料
 function all($table, ...$arg)
 {
     global $pdo;
@@ -39,7 +51,7 @@ function all($table, ...$arg)
         $sql = $sql . $arg[1];
     }
 
-    echo $sql;
+    // echo $sql;
 
     $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
@@ -87,9 +99,10 @@ function update($table, $column, $where)
 
     mb_substr($sql_where, 0, mb_strlen($sql_where) - 5);
     $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where ";
-    "UPDATE `expenditure` 
-        SET `date`='2021-11-22',`place`='泰山訓練場' 
-         WHERE `payment_method`='信用卡' AND `classification`='教育'";
+    // "UPDATE `expenditure` 
+    //     SET `date`='2021-11-22',`place`='泰山訓練場' 
+    //      WHERE `payment_method`='信用卡' AND `classification`='教育'";
+       
     //echo $sql;
     $pdo->exec($sql);
 }
@@ -111,8 +124,17 @@ function insert($table, $array)
 function del($table, $id)
 {
     global $pdo;
-    $sql = "DELETE FROM `$table` WHERE `id`='$id'";
-
+    // $sql = "DELETE FROM `$table` WHERE `id`='$id'";
+    $sql="DELETE FROM `$table` WHERE ";
+    if(is_array($id)){
+        foreach($id as $key=>$value){
+            $tmp[]="`$key`='$value'";
+        }
+        
+        $sql=$sql. implode(" AND ",$tmp);
+    }else{
+       $sql=$sql . "`id`='$id'";
+    }
     return $pdo->exec($sql);
 }
 
@@ -125,3 +147,13 @@ function del($table, $id)
 //                         WHERE `col1`='val1' && `col2`='val2',`col3`='val3'}
 
 // -- 有指定陣列形式的就可以用swwitch case撈出來
+
+
+
+// dd全名 direct dump 中文就是請印(出來)
+function dd($array){
+    echo "<pre>";
+    print_r($array);
+    echo "<pre>";
+
+}

@@ -17,7 +17,7 @@ $topic_sql = "select * from `topics` where `topic`='{$_POST['subject']}'";
 echo $topic_sql;
 $topic = $pdo->query($topic_sql)->fetch();
 
-
+//myvote裡的資料表
 foreach ($_POST['options'] as $opt) {
 
     $opt_array = ["opt" => $opt, "topic_id" => $topic['id']];
