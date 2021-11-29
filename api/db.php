@@ -161,7 +161,17 @@ function del($table, $id)
 
 // -- 有指定陣列形式的就可以用swwitch case撈出來
 
+function to($url)
+{
+    header("location:" . $url);
+}
 
+//任意查詢函式
+function q($sql)
+{
+    global $pdo;
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
 
 // dd全名 direct dump 中文就是請印(出來)
 function dd($array)
