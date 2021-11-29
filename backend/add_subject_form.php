@@ -5,37 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>建立問卷的頁面</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
 </head>
 
 <body>
-    <?php
 
-    // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
-    $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
-    $file = $do . ".php";
-    if (file_exists($file)) {
-        include $file;
-    } else {
-        // 如果沒有的話直接載入 add_subject_form
-        include "add_subject_form.php";
+    <form action="api/save_subject.php" method='post' class='col-6 m-auto'>
+        <label>問卷主題：<input type="text" name="subject"></label>
+        <!-- name後面接value -->
+        <!-- 如果表單要送給servie端重複的東西要加....讓它變成陣列的方式傳回來 -->
+        <label class='list-group-item'>選項一：<input type="text" name="options[]"></label>
+        <label class='list-group-item'>選項二：<input type="text" name="options[]"></label>
+        <label class='list-group-item'>選項三：<input type="text" name="options[]"></label>
+        <label class='list-group-item'>選項四：<input type="text" name="options[]"></label>
+        <input type="submit" value="送出">
 
-    }
+    </form>
 
-
-
-
-    ?>
-
-    <!-- 
-    要控制元件必須要有東西存在，如果前面東西還沒存在就放就沒用
-    所以後來習慣大家就先放後面了
--->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
