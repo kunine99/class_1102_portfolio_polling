@@ -1,3 +1,5 @@
+<?php include_once "../api/db.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,41 +7,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>我的問卷系統</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 </head>
 
 <body>
-  <div class="jumbotron">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+<div class="jumbotron p-0" style="overflow:hidden;height:250px">
+    <a href="index.php">
+      <div id="carouselExampleSlidesOnly" class="carousel slide  position-relative" data-ride="carousel">
+        <div class="carousel-inner position-absolute" style="top:-250px">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="../image/dessert-01.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../image/dessert-03.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../image/dessert-06.jpg" alt="Third slide">
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
+  </div>
+  <div class="container">
+
   <?php
 
   // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
-  $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
+  // $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
+  $do = (isset($_GET['do'])) ? $_GET['do'] : 'manage_vote';
+  
   $file = $do . ".php";
   if (file_exists($file)) {
     include $file;
   } else {
     // 如果沒有的話直接載入 add_subject_form
-    include "add_subject_form.php";
-  }
+    // include "add_subject_form.php";
+    include "manage_vote.php";
 
+  }
   ?>
-  <div class="p-3 text-center text-light bg-primary fixed-bottom">投票系統製作中</div>
+  </div>
+
+  <div class="p-3 text-center text-light bg-primary fixed-bottom">mack版權所有、歡迎盜用</div>
 
   <!-- 
     要控制元件必須要有東西存在，如果前面東西還沒存在就放就沒用
