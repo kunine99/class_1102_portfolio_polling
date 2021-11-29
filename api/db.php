@@ -14,23 +14,36 @@ function find($table, $id)
 {
     global $pdo;
     // $sql = "SELECT * FROM `$table` WHERE `id`='$id'";
-    $sql="SELECT * FROM `$table` WHERE ";
+    $sql = "SELECT * FROM `$table` WHERE ";
 
-    if(is_array($id)){
-        foreach($id as $key=>$value){
-            $tmp[]="`$key`='$value'";
+    if (is_array($id)) {
+        foreach ($id as $key => $value) {
+            $tmp[] = "`$key`='$value'";
         }
-        
-        $sql=$sql. implode(" AND ",$tmp);
-    }else{
-       $sql=$sql . "`id`='$id'";
+
+        $sql = $sql . implode(" AND ", $tmp);
+    } else {
+        $sql = $sql . "`id`='$id'";
     }
 
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
+//計算符合條件的資料筆數
+function rows($table, $array)
+{
+    global $pdo;
+    $sql = "SELECT count(*) FROM `$table` WHERE ";
+    foreach ($array as $key => $value) {
+        $tmp[] = "`$key`='$value'";
+    }
 
-// 取出指定資料表的所有資料
+    $sql = $sql . implode(" AND ", $tmp);
+    return $pdo->query($sql)->fetchColumn();
+}
+
+
+//取出指定資料表的所有資料
 function all($table, ...$arg)
 {
     global $pdo;
@@ -102,7 +115,7 @@ function update($table, $column, $where)
     // "UPDATE `expenditure` 
     //     SET `date`='2021-11-22',`place`='泰山訓練場' 
     //      WHERE `payment_method`='信用卡' AND `classification`='教育'";
-       
+
     //echo $sql;
     $pdo->exec($sql);
 }
@@ -125,15 +138,15 @@ function del($table, $id)
 {
     global $pdo;
     // $sql = "DELETE FROM `$table` WHERE `id`='$id'";
-    $sql="DELETE FROM `$table` WHERE ";
-    if(is_array($id)){
-        foreach($id as $key=>$value){
-            $tmp[]="`$key`='$value'";
+    $sql = "DELETE FROM `$table` WHERE ";
+    if (is_array($id)) {
+        foreach ($id as $key => $value) {
+            $tmp[] = "`$key`='$value'";
         }
-        
-        $sql=$sql. implode(" AND ",$tmp);
-    }else{
-       $sql=$sql . "`id`='$id'";
+
+        $sql = $sql . implode(" AND ", $tmp);
+    } else {
+        $sql = $sql . "`id`='$id'";
     }
     return $pdo->exec($sql);
 }
@@ -151,9 +164,9 @@ function del($table, $id)
 
 
 // dd全名 direct dump 中文就是請印(出來)
-function dd($array){
+function dd($array)
+{
     echo "<pre>";
     print_r($array);
-    echo "<pre>";
-
+    echo "</pre>";
 }

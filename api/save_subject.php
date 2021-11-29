@@ -7,7 +7,6 @@ include_once "db.php";
  * 
  */
 
-
 // print_r($_POST);
 //post裡面現在有subj跟id 一定會錯?
 
