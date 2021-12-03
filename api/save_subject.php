@@ -17,9 +17,10 @@ echo $topic_sql;
 $topic = $pdo->query($topic_sql)->fetch();
 
 //myvote裡的資料表
+// 不是空白才把我的資料加進去
 foreach ($_POST['options'] as $opt) {
+    if ($opt != "") {
 
     $opt_array = ["opt" => $opt, "topic_id" => $topic['id']];
     insert('options', $opt_array);
 }
-

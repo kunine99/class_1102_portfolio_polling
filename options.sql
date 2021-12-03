@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-11-29 09:29:40
+-- 產生時間： 2021-11-30 09:18:51
 -- 伺服器版本： 10.4.21-MariaDB
 -- PHP 版本： 7.4.25
 
@@ -31,18 +31,18 @@ CREATE TABLE `options` (
   `id` int(11) UNSIGNED NOT NULL,
   `opt` varchar(128) COLLATE utf8_unicode_520_ci NOT NULL,
   `topic_id` int(11) UNSIGNED NOT NULL,
-  `總計` int(11) NOT NULL
+  `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- 傾印資料表的資料 `options`
 --
 
-INSERT INTO `options` (`id`, `opt`, `topic_id`, `總計`) VALUES
-(2, '小狗', 2, 0),
-(3, '麥當勞', 3, 0),
-(6, '貓咪', 2, 0),
-(4445, '肯德基', 3, 0);
+INSERT INTO `options` (`id`, `opt`, `topic_id`, `count`) VALUES
+(2, '小狗', 2, 2),
+(3, '麥當勞', 3, 1),
+(6, '貓咪', 2, 1),
+(4445, '肯德基', 3, 1);
 
 --
 -- 已傾印資料表的索引

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<div class="jumbotron p-0" style="overflow:hidden;height:250px">
+<div class="jumbotron p-0"  style="overflow:hidden;height:250px">
     <a href="index.php">
       <div id="carouselExampleSlidesOnly" class="carousel slide  position-relative" data-ride="carousel">
         <div class="carousel-inner position-absolute" style="top:-250px">

@@ -8,6 +8,7 @@
 //填資料庫名稱
 $dsn = "mysql:host=localhost;charset=utf8;dbname=myvote";
 $pdo = new PDO($dsn, 'root', '');
+session_start();
 
 //取得符合條件的一筆資料
 function find($table, $id)
@@ -112,6 +113,8 @@ function update($table, $column, $where)
 
     mb_substr($sql_where, 0, mb_strlen($sql_where) - 5);
     $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where ";
+    echo $sql . "<br>";
+    
     // "UPDATE `expenditure` 
     //     SET `date`='2021-11-22',`place`='泰山訓練場' 
     //      WHERE `payment_method`='信用卡' AND `classification`='教育'";
