@@ -115,45 +115,44 @@ function update($table, $column, $where)
     $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where ";
     echo $sql . "<br>";
     
-    // "UPDATE `expenditure` 
+   // "UPDATE `expenditure` 
     //     SET `date`='2021-11-22',`place`='泰山訓練場' 
     //      WHERE `payment_method`='信用卡' AND `classification`='教育'";
 
     //echo $sql;
-    $pdo->exec($sql);
+
 }
 
-function insert($table, $array)
-{
+
+function insert($table,$array){
     global $pdo;
 
 
-    $sql = "INSERT into $table(`" . implode('`,`', array_keys($array)) . "`) 
-                       value('" . implode("','", $array) . "')";
+    $sql="INSERT into $table(`" . implode('`,`',array_keys($array)) . "`) 
+                       value('" . implode("','",$array) ."')";
 
-    echo $sql . "<br>";
-    return $pdo->exec($sql);
+   echo $sql."<br>";
+   return $pdo->exec($sql);
+
 }
 
 
 
-function del($table, $id)
-{
-    global $pdo;
-    // $sql = "DELETE FROM `$table` WHERE `id`='$id'";
-    $sql = "DELETE FROM `$table` WHERE ";
-    if (is_array($id)) {
-        foreach ($id as $key => $value) {
-            $tmp[] = "`$key`='$value'";
-        }
-
-        $sql = $sql . implode(" AND ", $tmp);
-    } else {
-        $sql = $sql . "`id`='$id'";
-    }
-    return $pdo->exec($sql);
+function del($table,$id){
+   global $pdo;
+   // $sql = "DELETE FROM `$table` WHERE `id`='$id'";
+   $sql="DELETE FROM `$table` WHERE ";
+   if(is_array($id)){
+       foreach($id as $key=>$value){
+           $tmp[]="`$key`='$value'";
+       }
+       
+       $sql=$sql. implode(" AND ",$tmp);
+   }else{
+      $sql=$sql . "`id`='$id'";
+   }
+   return $pdo->exec($sql);
 }
-
 
 //設定條件變數為where
 
@@ -164,22 +163,21 @@ function del($table, $id)
 
 // -- 有指定陣列形式的就可以用swwitch case撈出來
 
-function to($url)
-{
-    header("location:" . $url);
+function to($url){
+   header("location:".$url);
 }
 
 //任意查詢函式
-function q($sql)
-{
-    global $pdo;
-    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+function q($sql){
+   global $pdo;
+   return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
 }
 
 // dd全名 direct dump 中文就是請印(出來)
-function dd($array)
-{
+function dd($array){
     echo "<pre>";
     print_r($array);
     echo "</pre>";
 }
+?>

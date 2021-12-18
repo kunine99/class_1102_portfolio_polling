@@ -1,4 +1,10 @@
-<?php include_once "../api/db.php"; ?>
+<?php include_once "../api/db.php";
+
+if (!isset($_SESSION['user'])) {
+  to("../index.php");
+  exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,46 +15,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的問卷系統</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
+  <style>
+    .container {
+      min-height: 544px;
+    }
+  </style>
 </head>
 
 <body>
-<div class="jumbotron p-0"  style="overflow:hidden;height:250px">
-    <a href="index.php">
-      <div id="carouselExampleSlidesOnly" class="carousel slide  position-relative" data-ride="carousel">
-        <div class="carousel-inner position-absolute" style="top:-250px">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../image/dessert-01.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../image/dessert-03.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../image/dessert-06.jpg" alt="Third slide">
+  <div class="jumbotron p-0" style="overflow:hidden;height:250px">
+  <a href="index.php">
+        <div id="carouselExampleSlidesOnly" class="carousel slide  position-relative" data-ride="carousel">
+          <div class="carousel-inner position-absolute" style="top:-250px">
+            <?php
+            $images = all('ad', ['sh' => 1]);
+
+            foreach ($images as $key => $image) {
+              if ($key == 0) {
+                echo "<div class='carousel-item active'>";
+              } else {
+                echo "<div class='carousel-item'>";
+              }
+
+              echo "  <img class='d-block w-100' src='../image/{$image['name']}' alt='{$image['intro']}'>";
+              echo "</div>";
+            }
+
+
+            ?>
           </div>
         </div>
+      </a>
+  </div>
+  </div>
+
+  <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'>
+    <div>
+      <a class='px-2' href="?do=show_vote_list">問卷管理</a>
+      <a class='px-2' href="?do=member">會員管理</a>
+      <a class='px-2' href="?do=ad">廣告管理</a>
+
+
+    </div>
+    <?php
+
+    if (isset($_SESSION['user'])) {
+      echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
+    ?>
+      <div>
+        <a class="btn btn-sm btn-primary mx-1" href="../logout.php">登出</a>
       </div>
-    </a>
-  </div>
-  </div>
+    <?php
+    }
+    ?>
+
+  </nav>
+
+
+
   <div class="container">
 
-  <?php
+    <?php
 
-  // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
-  // $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
-  $do = (isset($_GET['do'])) ? $_GET['do'] : 'manage_vote';
-  
-  $file = $do . ".php";
-  if (file_exists($file)) {
-    include $file;
-  } else {
-    // 如果沒有的話直接載入 add_subject_form
-    // include "add_subject_form.php";
-    include "manage_vote.php";
+    // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
+    // $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
+    $do = (isset($_GET['do'])) ? $_GET['do'] : 'manage_vote';
 
-  }
-  ?>
+    $file = $do . ".php";
+    if (file_exists($file)) {
+      include $file;
+    } else {
+      // 如果沒有的話直接載入 add_subject_form
+      // include "add_subject_form.php";
+      include "manage_vote.php";
+    }
+    ?>
   </div>
 
   <div class="p-3 text-center text-light bg-primary fixed-bottom">mack版權所有、歡迎盜用</div>
