@@ -4,11 +4,14 @@
 <table id="loginForm" class='table m-auto w-auto'>
     <tr>
         <td>帳號：</td>
-        <td><input type="text" name="account"></td>
+        <td><input type="text" name="account" placeholder="請輸入帳號"></td>
     </tr>
+
+
+
     <tr>
         <td>密碼</td>
-        <td><input type="password" name="password"></td>
+        <td><input type="password" name="password" placeholder="請輸入密碼"></td>
     </tr>
     <tr>
         <td colspan="2">

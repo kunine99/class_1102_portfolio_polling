@@ -17,7 +17,7 @@ $options = all('options', ['topic_id' => $id]);
             //我現在資料表的欄位是options，name盡量要取跟資料表一樣
             //如果是多選，因為要知道你有幾個，所以要用陣列存
             //單選的話
-            echo "<label class='list-group-item list-group-item-success list-group-item-action'>";
+            echo "<label class='list-group-item list-group-item-info list-group-item-action'>";
             echo "<input type='radio' name='opt' value='{$opt['id']}'>";
             echo $opt['opt'];
             echo "</label>";
