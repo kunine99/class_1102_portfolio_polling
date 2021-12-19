@@ -1,4 +1,17 @@
-<h1>列出所有的問題</h1>
+<style>
+.votebox{
+width: 150px;
+height: 150px;
+}
+#question{
+    font-size: 50px;
+}
+</style>
+<div class="d-flex justify-content-between">
+  <div class="bd-highlight font-weight-bold" id="question">列出所有的問題</div>
+  <div class="bd-highlight"><p id="animContainer" class="votebox"></p></div>
+</div>
+
 <?php
 $subjects = all('topics');
 echo "<ol class='list-group'>";
