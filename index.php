@@ -65,6 +65,7 @@
       echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
     ?>
       <div>
+      <a class="btn btn-sm btn-primary mx-1" href="./api/save.user.php">編輯會員資料</a>
         <a class="btn btn-sm btn-primary mx-1" href="logout.php">登出</a>
       </div>
 
