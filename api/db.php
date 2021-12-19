@@ -6,7 +6,7 @@
 // }
 
 //填資料庫名稱
-$dsn = "mysql:host=localhost;charset=utf8;dbname=myvote";
+$dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling";
 $pdo = new PDO($dsn, 'root', '');
 session_start();
 
@@ -29,6 +29,8 @@ function find($table, $id)
 
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
+
+
 
 //計算符合條件的資料筆數
 function rows($table, $array)
@@ -114,6 +116,8 @@ function update($table, $column, $where)
     mb_substr($sql_where, 0, mb_strlen($sql_where) - 5);
     $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where ";
     echo $sql . "<br>";
+    // 投票票數資料進去資料庫
+    $pdo->exec($sql);
     
    // "UPDATE `expenditure` 
     //     SET `date`='2021-11-22',`place`='泰山訓練場' 
@@ -135,6 +139,8 @@ function insert($table,$array){
    return $pdo->exec($sql);
 
 }
+
+
 
 
 
@@ -180,4 +186,24 @@ function dd($array){
     print_r($array);
     echo "</pre>";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
+
+
+
+
+
+
