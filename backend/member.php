@@ -36,9 +36,10 @@ foreach($users as $user){
         echo "<td>{$user['birthday']}</td>";
         echo "<td>{$user['email']}</td>";
         echo "<td>";
-        echo "<a href='edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>";
+        echo "<a href='../api/edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>";
         // echo "<a href='del_user.php?id={$user['id']}'><button class='btn btn-sm btn-danger'>刪除</button></a>";
-        
+        // echo "<a href='?do=vote_result&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";
+
         echo "</td>";
     echo "</tr>";
 }

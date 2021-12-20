@@ -16,7 +16,13 @@
     }
   </style>
 </head>
+<?php
+$dsn="mysql:host=localhost;dbname=mypolling;charset=utf8";
+$pdo=new PDO($dsn,'root','');
+$sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `users` where `id` > 0;";
+$users=$pdo->query($sql)->fetchALL();
 
+?>
 <body>
 
   <div class="jumbotron p-0 mb-0" style="overflow:hidden;height:250px">
@@ -65,7 +71,9 @@
       echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
     ?>
       <div>
-      <a class="btn btn-sm btn-primary mx-1" href="./api/save.user.php">編輯會員資料</a>
+      <!-- <a class="btn btn-sm btn-primary mx-1" href="./api/edit_user.php?id=<?=$user['id']?>">編輯會員資料</a> -->
+              <!-- echo "<a href='../api/edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>"; -->
+
         <a class="btn btn-sm btn-primary mx-1" href="logout.php">登出</a>
       </div>
 

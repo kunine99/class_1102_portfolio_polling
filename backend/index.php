@@ -92,7 +92,7 @@ if (!isset($_SESSION['user'])) {
     ?>
   </div>
 
-  <div class="p-3 text-center text-light bg-primary fixed-bottom">mack版權所有、歡迎盜用</div>
+  <div class="p-3 text-center text-light bg-primary fixed-bottom">@ 2021 泰山php班第2期 版權所有、歡迎盜用</div>
 
   <!-- 
     要控制元件必須要有東西存在，如果前面東西還沒存在就放就沒用
