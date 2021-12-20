@@ -1,3 +1,5 @@
+
+
 <?php include_once "db.php";
 //更新使用者資料
 
@@ -20,7 +22,5 @@ $pdo->exec($update_users_sql);
 // echo "login更新<br>".$update_users_sql."<br>";
 // header("../backend/member.php");
 
-
-// to("../backend/?do=member");
-
+to("../backend/?do=member");
 ?>

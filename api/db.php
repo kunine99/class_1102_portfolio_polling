@@ -7,9 +7,11 @@
 
 //填資料庫名稱
 $dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
-// $dsn = "mysql:host=220.128.133.15;charset=utf8;dbname=s1100411";
-
 $pdo = new PDO($dsn, 'root', '');
+
+// $dsn = "mysql:host=localhost;charset=utf8;dbname=s1100411";
+// $pdo = new PDO($dsn, 's1100411', 's1100411');
+
 session_start();
 
 //取得符合條件的一筆資料

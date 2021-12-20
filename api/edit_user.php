@@ -1,20 +1,13 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+     <?php include_once "db.php";
+        
+        //編輯會員資料
+        $user_id=$_GET['id'];  //login資料表的id .member資料表login_id
+        $user_sql="select * from `users` where  `users`.`id`='$user_id'";
+        // echo $user_sql;
+        $user=$pdo->query($user_sql)->fetch();
+        
+        ?>
 
-
-<?php include_once "db.php";
-
-
-
-
-//編輯會員資料
-$user_id=$_GET['id'];  //login資料表的id .member資料表login_id
-$user_sql="select * from `users` where  `users`.`id`='$user_id'";
-// echo $user_sql;
-$user=$pdo->query($user_sql)->fetch();
-
-?>
-<div class="container">
 
 <h2>編輯會員資料</h2>
 <form action="save_user.php" method="post" class="col-md-6">

@@ -1,4 +1,5 @@
 <?php include_once "./api/db.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,21 +10,14 @@
   <title>問卷系統</title>
   <!-- 六角學院4代bst -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  
+
   <style>
     .container {
       min-height: 544px;
     }
   </style>
 </head>
-<!-- <?php
-// $dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
-// $dsn = "mysql:host=220.128.133.15;charset=utf8;dbname=s1100411";
-// $pdo=new PDO($dsn,'root','');
-// $sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `users` where `id` > 0;";
-// $users=$pdo->query($sql)->fetchALL();
 
-?> -->
 <body>
 
   <div class="jumbotron p-0 mb-0" style="overflow:hidden;height:250px">
@@ -49,8 +43,6 @@
             echo "  <img class='d-block w-100' src='image/{$image['name']}' title='{$image['intro']}'>";
             echo "</div>";
           }
-
-
           ?>
         </div>
       </div>
@@ -72,8 +64,8 @@
       echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
     ?>
       <div>
-      <!-- <a class="btn btn-sm btn-primary mx-1" href="./api/edit_user.php?id=<?=$user['id']?>">編輯會員資料</a> -->
-              <!-- echo "<a href='../api/edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>"; -->
+        <a class="btn btn-sm btn-primary mx-1" href="./api/edit_user.php?id=<?=$_SESSION['id']?>">編輯會員資料</a>
+        <!-- <a href='edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>"; -->
 
         <a class="btn btn-sm btn-primary mx-1" href="logout.php">登出</a>
       </div>
@@ -92,14 +84,14 @@
   </nav>
 
 
-  
+
   <div class="container">
- 
-<?php
-  // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
-  // $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
-  // $file = $do . ".php";
-  // $file =  "./frontend".$do.".php";
+
+    <?php
+    // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
+    // $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
+    // $file = $do . ".php";
+    // $file =  "./frontend".$do.".php";
     //根據網址帶的do參數內容來決定要include那一個檔案內容
     $do = (isset($_GET['do'])) ? $_GET['do'] : 'show_vote_list';
 
@@ -108,12 +100,12 @@
     if (file_exists($file)) {
       include $file;
     } else {
-    // 如果沒有的話直接載入 add_subject_form
-    // include "add_subject_form.php";
+      // 如果沒有的話直接載入 add_subject_form
+      // include "add_subject_form.php";
 
       include "./frontend/show_vote_list.php";
     }
-    
+
     ?>
   </div>
   <div class="p-3 text-center text-light bg-primary">@ 2021 泰山php班第2期 版權所有、歡迎盜用</div>
@@ -122,13 +114,13 @@
     所以後來習慣大家就先放後面了
 -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-<!-- csnj/Home/Libraries/bodymovin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.8.1/lottie.min.js"></script>
-<script src="./js/script.js"></script>
+  <!-- csnj/Home/Libraries/bodymovin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.8.1/lottie.min.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
