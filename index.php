@@ -16,13 +16,14 @@
     }
   </style>
 </head>
-<?php
-$dsn="mysql:host=localhost;dbname=mypolling;charset=utf8";
-$pdo=new PDO($dsn,'root','');
-$sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `users` where `id` > 0;";
-$users=$pdo->query($sql)->fetchALL();
+<!-- <?php
+// $dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
+// $dsn = "mysql:host=220.128.133.15;charset=utf8;dbname=s1100411";
+// $pdo=new PDO($dsn,'root','');
+// $sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `users` where `id` > 0;";
+// $users=$pdo->query($sql)->fetchALL();
 
-?>
+?> -->
 <body>
 
   <div class="jumbotron p-0 mb-0" style="overflow:hidden;height:250px">

@@ -2,14 +2,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 
-<?php
-//更新使用者資料
-
-include_once "db.php";
+<?php include_once "db.php";
 
 
-$dsn="mysql:host=localhost;dbname=mypolling;charset=utf8";
-$pdo=new PDO($dsn,'root','');
+
 
 //編輯會員資料
 $user_id=$_GET['id'];  //login資料表的id .member資料表login_id

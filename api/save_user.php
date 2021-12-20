@@ -1,9 +1,7 @@
-<?php
+<?php include_once "db.php";
 //更新使用者資料
 
 
-$dsn="mysql:host=localhost;dbname=mypolling;charset=utf8";
-$pdo=new PDO($dsn,'root','');
 
 $id=$_POST['id'];
 $account=$_POST['account'];

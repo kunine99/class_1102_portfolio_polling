@@ -5,11 +5,11 @@
 <div class="col-8 mx-auto d-flex justify-content-between">
 
 </div>
- <?php
-
-
-$dsn="mysql:host=localhost;dbname=mypolling;charset=utf8";
-$pdo=new PDO($dsn,'root','');
+ <?php 
+// include_once "./api/db.php";
+// $dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
+// $dsn = "mysql:host=220.128.133.15;charset=utf8;dbname=s1100411";
+// $pdo=new PDO($dsn,'root','');
 // $sql="SELECT * FROM `users`";
 
 $sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `users` where `id` > 0;";

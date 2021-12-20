@@ -6,7 +6,9 @@
 // }
 
 //填資料庫名稱
-$dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling";
+$dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
+// $dsn = "mysql:host=220.128.133.15;charset=utf8;dbname=s1100411";
+
 $pdo = new PDO($dsn, 'root', '');
 session_start();
 
