@@ -2,13 +2,6 @@
 <!-- 自己寫 -->
 
 
-
-
-
-
-
-
-
 <?php
 include_once "db.php";
 

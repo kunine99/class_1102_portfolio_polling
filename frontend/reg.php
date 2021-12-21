@@ -40,8 +40,7 @@
                                 </tr>
                                 <tr>
                                     <td><i class="fas fa-stream">性別：</td>
-                                    <td>
-                                        <!-- <input type="text" name="gender" id="form3Example1cg" class="form-control form-control-sm"> -->
+                                    <td> 
                                         <input type="radio" id="html" name="gender" value="男性">
                                         <label for="man">男性</label>
                                         <input type="radio" id="css" name="gender" value="女性">

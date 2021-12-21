@@ -7,6 +7,12 @@ $user_sql = "select * from `users` where  `users`.`id`='$user_id'";
 $user = $pdo->query($user_sql)->fetch();
 
 ?>
+<style>
+    #boxx:hover {
+        background: white;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, .25);
+    }
+</style>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -22,19 +28,19 @@ $user = $pdo->query($user_sql)->fetch();
                                 <input type="hidden" name="id" value='<?= $user['id']; ?>'>
                                 <tr>
                                     <td><i class="fas fa-user"></i>帳號：</td>
-                                    <td><input  name="account" id="form3Example1cg" class="form-control form-control-sm" value='<?= $user['account']; ?>' disabled></td>
+                                    <td><input name="account" id="form3Example1cg" class="form-control form-control-sm" value='<?= $user['account']; ?>' disabled></td>
                                     <!-- 這方法不好，如果會程式的人就會被他F12測試刪掉DISABLED去更改 -->
                                 </tr>
-                                
+
                                 <tr>
                                     <td><i class="fas fa-lock "></i>密碼：</td>
                                     <td><input type="password" name="password" id="myInputPasswoed" class="form-control form-control-smvalue=" value='<?= $user['password']; ?>'>
-                                    <input type="checkbox" onclick="myFunction()">Show Password
-</td>
+                                        <input type="checkbox" onclick="myFunction()">顯示密碼
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><i class="far fa-envelope">電子郵件：</td>
-                                    <td><input type="text" name="email" id="form3Example1cg" class="form-control form-control-sm" placeholder="@gmail.com" value='<?= $user['email']; ?>' ></td>
+                                    <td><input type="text" name="email" id="form3Example1cg" class="form-control form-control-sm" placeholder="@gmail.com" value='<?= $user['email']; ?>'></td>
                                 </tr>
                                 <tr>
                                     <td><i class="fas fa-user">姓名：</td>
@@ -47,21 +53,27 @@ $user = $pdo->query($user_sql)->fetch();
                                 <tr>
                                     <td><i class="fas fa-stream">性別：</td>
                                     <td>
-                                        <input type="radio" id="html" name="gender" value="男性" value='<?= $user['gender']; ?>' checked> 
-                                        gender=1  checken顯示 gender=2 checked else
+
+                                        <!-- gender=1  顯示checked else gender=2 checked else -->
+                                        <input type="radio" name="gender" <?= $user['gender'] == 1 ? "checked" : ""; ?>>
                                         <label for="man">男性</label>
-                                        <input type="radio" id="css" name="gender" value="女性" value='<?= $user['gender']; ?>'>
+                                        <input type="radio" name="gender" <?= $user['gender'] == 2 ? "checked" : ""; ?>>
                                         <label for="woman">女性</label>
-                                        <input type="radio" id="javascript" name="gender" value="其他" value='<?= $user['gender']; ?>'>
+                                        <input type="radio" name="gender" <?= $user['gender'] == 3 ? "checked" : ""; ?>>
                                         <label for="other">其他</label>
                                     </td>
-
+                                    <!-- 
+                                    <select name="gender">
+                                        <option value="會員" < ?= ($user['role'] == '會員') ? "selected" : ""; ?>>會員</option>
+                                        <option value="VIP" < ?= ($user['role'] == 'VIP') ? "selected" : ""; ?>>VIP</option>
+                                        <option value="管理員" < ?= ($user['role'] == '管理員') ? "selected" : ""; ?>>管理員</option>
+                                    </select> -->
                                 </tr>
-                                <!-- <li class="list-group-item">性別:<input type="text" name='gender' value='< ?= $user['gender']; ?>'></li> -->
+
                             </table>
                             <div class='text-center '><input type="submit" value="確認修改" class="btn btn-primary my-3"></div>
-                            <!-- <div class='text-center '><input type="reset" value="重置" class="btn btn-warning my-3"></div> -->
-                            
+                            <div class='text-center '><input type="reset" value="重置" class="btn btn-warning my-3"></div>
+
                     </div>
                 </div>
             </div>
