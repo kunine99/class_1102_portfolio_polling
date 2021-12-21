@@ -6,7 +6,7 @@
 // }
 
 //填資料庫名稱
-$dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
+$dsn = "mysql:host=localhost;charset=utf8;dbname=s1100411"; 
 $pdo = new PDO($dsn, 'root', '');
 
 // $dsn = "mysql:host=localhost;charset=utf8;dbname=s1100411";
@@ -190,24 +190,19 @@ function dd($array){
     print_r($array);
     echo "</pre>";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
+<script>
+// show密碼
+function myFunction() {
+    var x = document.getElementById("myInputPasswoed");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
 
-
-
+</script>
 
 
 

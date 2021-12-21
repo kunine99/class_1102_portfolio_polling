@@ -22,15 +22,19 @@ $user = $pdo->query($user_sql)->fetch();
                                 <input type="hidden" name="id" value='<?= $user['id']; ?>'>
                                 <tr>
                                     <td><i class="fas fa-user"></i>帳號：</td>
-                                    <td><input type="text" name="account" id="form3Example1cg" class="form-control form-control-sm" value='<?= $user['account']; ?>'></td>
+                                    <td><input  name="account" id="form3Example1cg" class="form-control form-control-sm" value='<?= $user['account']; ?>' disabled></td>
+                                    <!-- 這方法不好，如果會程式的人就會被他F12測試刪掉DISABLED去更改 -->
                                 </tr>
+                                
                                 <tr>
                                     <td><i class="fas fa-lock "></i>密碼：</td>
-                                    <td><input type="password" name="password" id="form3Example1cg" class="form-control form-control-smvalue=" value='<?= $user['password']; ?>'></td>
+                                    <td><input type="password" name="password" id="myInputPasswoed" class="form-control form-control-smvalue=" value='<?= $user['password']; ?>'>
+                                    <input type="checkbox" onclick="myFunction()">Show Password
+</td>
                                 </tr>
                                 <tr>
                                     <td><i class="far fa-envelope">電子郵件：</td>
-                                    <td><input type="text" name="email" id="form3Example1cg" class="form-control form-control-sm" placeholder="@gmail.com" value='<?= $user['email']; ?>'></td>
+                                    <td><input type="text" name="email" id="form3Example1cg" class="form-control form-control-sm" placeholder="@gmail.com" value='<?= $user['email']; ?>' ></td>
                                 </tr>
                                 <tr>
                                     <td><i class="fas fa-user">姓名：</td>
@@ -44,11 +48,11 @@ $user = $pdo->query($user_sql)->fetch();
                                     <td><i class="fas fa-stream">性別：</td>
                                     <td>
                                         <input type="radio" id="html" name="gender" value="男性" value='<?= $user['gender']; ?>'>
-                                        <label for="html">男性</label>
+                                        <label for="man">男性</label>
                                         <input type="radio" id="css" name="gender" value="女性" value='<?= $user['gender']; ?>'>
-                                        <label for="css">女性</label>
+                                        <label for="woman">女性</label>
                                         <input type="radio" id="javascript" name="gender" value="其他" value='<?= $user['gender']; ?>'>
-                                        <label for="javascript">其他</label>
+                                        <label for="other">其他</label>
                                     </td>
 
                                 </tr>

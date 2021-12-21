@@ -24,7 +24,7 @@
                                 </tr>
                                 <tr>
                                     <td><i class="fas fa-lock ">密碼：</td>
-                                    <td><input type="password" name="password" id="form3Example1cg" class="form-control form-control-sm"></td>
+                                    <td><input type="password" name="password" id="myInputPasswoed" class="form-control form-control-sm"></td>
                                 </tr>
                                 <tr>
                                     <td><i class="far fa-envelope">電子郵件：</td>
@@ -43,11 +43,11 @@
                                     <td>
                                         <!-- <input type="text" name="gender" id="form3Example1cg" class="form-control form-control-sm"> -->
                                         <input type="radio" id="html" name="gender" value="男性">
-                                        <label for="html">男性</label>
+                                        <label for="man">男性</label>
                                         <input type="radio" id="css" name="gender" value="女性">
-                                        <label for="css">女性</label>
+                                        <label for="woman">女性</label>
                                         <input type="radio" id="javascript" name="gender" value="其他">
-                                        <label for="javascript">其他</label>
+                                        <label for="other">其他</label>
                                     </td>
                                 </tr>
                             </table>

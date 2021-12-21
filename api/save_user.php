@@ -22,5 +22,8 @@ $pdo->exec($update_users_sql);
 // echo "login更新<br>".$update_users_sql."<br>";
 // header("../backend/member.php");
 
+// 下判斷式，從前台進入的回index，後台進入的回member  
+// to("../index.php");
+
 to("../backend/?do=member");
 ?>
