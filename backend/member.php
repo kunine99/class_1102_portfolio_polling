@@ -54,7 +54,6 @@ foreach($users as $user){
         echo "</tr>";
 }
 
-
 echo "</table>"
 ?>
 

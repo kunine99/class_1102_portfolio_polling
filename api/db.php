@@ -195,36 +195,6 @@ function dd($array){
 
 
 
-// 乙級複製來的
-// public function all(...$arg){
-//     $sql="SELECT * FROM $this->table ";
-
-//     switch(count($arg)){
-//         case 2:
-//             foreach($arg[0] as $key => $value){
-//                 $tmp[]="`$key`='$value'";
-//             }
-
-//             $sql .=" WHERE ".implode(" AND ".$arg[0])." ".$arg[1];
-
-//         break;
-//         case 1:
-//             if(is_array($arg[0])){
-//                 foreach($arg[0] as $key => $value){
-//                     $tmp[]="`$key`='$value'";
-//                 }
-//                 $sql .= " WHERE ".implode(" AND ".$arg[0]);
-//             }else{
-//                 $sql .= $arg[1];
-                
-//             }
-//         break;
-//     }
-
-//     return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-// }
-
-
 
 
 
