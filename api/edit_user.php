@@ -47,7 +47,8 @@ $user = $pdo->query($user_sql)->fetch();
                                 <tr>
                                     <td><i class="fas fa-stream">性別：</td>
                                     <td>
-                                        <input type="radio" id="html" name="gender" value="男性" value='<?= $user['gender']; ?>'>
+                                        <input type="radio" id="html" name="gender" value="男性" value='<?= $user['gender']; ?>' checked> 
+                                        gender=1  checken顯示 gender=2 checked else
                                         <label for="man">男性</label>
                                         <input type="radio" id="css" name="gender" value="女性" value='<?= $user['gender']; ?>'>
                                         <label for="woman">女性</label>
