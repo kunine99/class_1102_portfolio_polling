@@ -28,7 +28,7 @@ $user = $pdo->query($user_sql)->fetch();
                                 <input type="hidden" name="id" value='<?= $user['id']; ?>'>
                                 <tr>
                                     <td><i class="fas fa-user"></i>帳號：</td>
-                                    <td><input name="account" id="form3Example1cg" class="form-control form-control-sm" value='<?= $user['account']; ?>' disabled></td>
+                                    <td><input name="account" id="form3Example1cg" class="form-control form-control-sm" value='<?= $user['account']; ?>'></td>
                                     <!-- 這方法不好，如果會程式的人就會被他F12測試刪掉DISABLED去更改 -->
                                 </tr>
 

@@ -6,6 +6,7 @@
 
 </div>
  <?php 
+
 // include_once "./api/db.php";
 // $dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
 // $dsn = "mysql:host=220.128.133.15;charset=utf8;dbname=s1100411";
@@ -25,23 +26,32 @@ echo "<td>性別</td>";
 echo "<td>生日</td>";
 echo "<td>信箱</td>";
 echo "<td>操作</td>";
-
 echo "</tr>";
+
+
+
+
+
 foreach($users as $user){
     echo "<tr>";
         echo "<td>{$user['id']}</td>";
         echo "<td>{$user['account']}</td>";
         echo "<td>{$user['name']}</td>";
-        echo "<td>{$user['gender']}</td>";
+        if($user['gender'] == 1 ){
+            echo "<td>男</td>";
+        }else if($user['gender'] == 2 ){
+            echo "<td>女</td>";
+        }else if($user['gender'] == 3 ){
+            echo "<td>其他</td>";
+        }
         echo "<td>{$user['birthday']}</td>";
         echo "<td>{$user['email']}</td>";
         echo "<td>";
         echo "<a href='../api/edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>";
         // echo "<a href='del_user.php?id={$user['id']}'><button class='btn btn-sm btn-danger'>刪除</button></a>";
         // echo "<a href='?do=vote_result&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";
-
         echo "</td>";
-    echo "</tr>";
+        echo "</tr>";
 }
 
 
