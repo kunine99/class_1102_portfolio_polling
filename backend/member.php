@@ -1,8 +1,7 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<h1 class="text-center">會員管理中心</h1>   
-
-
-<div class="col-8 mx-auto d-flex justify-content-between">
+<h1 class="text-center">會員管理中心系統</h1>   
+<div class="col- mx-auto d-flex justify-content-between">
 
 </div>
  <?php 
@@ -17,8 +16,8 @@ $sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `use
 $users=$pdo->query($sql)->fetchALL();
 
 
-echo "<table class='table col-8 mx-auto'>";
-echo "<tr>";
+echo "<table class='table col-12 mx-auto table-hover'>";
+echo "<thead  class='table-secondary'>";
 echo "<td>id</td>";
 echo "<td>帳號</td>";
 echo "<td>姓名</td>";
@@ -26,7 +25,7 @@ echo "<td>性別</td>";
 echo "<td>生日</td>";
 echo "<td>信箱</td>";
 echo "<td>操作</td>";
-echo "</tr>";
+echo "</thead>";
 
 
 
@@ -59,3 +58,6 @@ echo "</table>"
 
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

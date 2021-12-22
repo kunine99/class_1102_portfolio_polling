@@ -17,7 +17,7 @@
                     <div class="card-body p-5">
                         <h2 class="text-center font-weight-bold">註冊會員</h2>
                         <form action="./api/reg.php" method="post" id="regForm">
-                            <table class='table m-auto w-auto'>
+                            <table class='table m-auto w-auto  table-hover'>
                                 <tr>
                                     <td><i class="fas fa-user"></i>帳號：</td>
                                     <td><input type="text" name="account" id="form3Example1cg" class="form-control form-control-sm"></td>

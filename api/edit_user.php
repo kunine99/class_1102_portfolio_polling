@@ -24,7 +24,7 @@ $user = $pdo->query($user_sql)->fetch();
                     <div class="card-body p-5">
                         <h2 class="text-center font-weight-bold">編輯會員資料</h2>
                         <form action="save_user.php" method="post" id="regForm">
-                            <table class='table m-auto w-auto'>
+                            <table class='table m-auto w-auto  table-hover'>
                                 <input type="hidden" name="id" value='<?= $user['id']; ?>'>
                                 <tr>
                                     <td><i class="fas fa-user"></i>帳號：</td>
