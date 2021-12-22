@@ -16,15 +16,17 @@ $sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `use
 $users=$pdo->query($sql)->fetchALL();
 
 
-echo "<table class='table col-12 mx-auto table-hover'>";
-echo "<thead  class='table-secondary'>";
+echo "<table class='table col-12  mx-auto table-hover table table-striped'>";
+echo "<thead  class='table-secondary text-center thead-light'>";
 echo "<td>id</td>";
 echo "<td>帳號</td>";
 echo "<td>姓名</td>";
 echo "<td>性別</td>";
 echo "<td>生日</td>";
 echo "<td>信箱</td>";
-echo "<td>操作</td>";
+echo "<td>操作選項</td>";
+// echo "<td>刪除</td>";
+
 echo "</thead>";
 
 
@@ -32,7 +34,7 @@ echo "</thead>";
 
 
 foreach($users as $user){
-    echo "<tr>";
+    echo "<tr class='text-center'>";
         echo "<td>{$user['id']}</td>";
         echo "<td>{$user['account']}</td>";
         echo "<td>{$user['name']}</td>";
@@ -46,8 +48,7 @@ foreach($users as $user){
         echo "<td>{$user['birthday']}</td>";
         echo "<td>{$user['email']}</td>";
         echo "<td>";
-        echo "<a href='../api/edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>";
-        echo "<span></span>";
+        echo "<a href='../api/edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success mx-1'>編輯</button></a>";
         echo "<a href='del_user.php?id={$user['id']}'><button class='btn btn-sm  btn-danger'>刪除</button></a>";
 
         echo "</td>";
