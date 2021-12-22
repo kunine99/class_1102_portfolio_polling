@@ -1,4 +1,4 @@
-<h2 class="text-center font-weight-bold">編輯輪播圖</h2>
+<h2 class="text-center font-weight-bold  text-primary">編輯輪播圖</h2>
 <?php
 $ad=find('ad',$_GET['id']);
 

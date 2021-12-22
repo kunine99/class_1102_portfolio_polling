@@ -1,4 +1,4 @@
-<h2 class="text-center font-weight-bold">輪播圖管理</h2>
+<h2 class="text-center font-weight-bold  text-primary">輪播圖管理</h2>
 
 <div class="row">
 <div class="col-md-3">
@@ -18,9 +18,9 @@
 </form>
 </div>
 <div class="col-md-9">
-<h3 class="text-center">圖片列表</h3>
+<h3 class="text-center font-weight-bold  text-primary">圖片列表</h3>
 <table class="table  table-hover">
-    <tr>
+    <tr class="font-weight-bold  text-primary">
         <td>圖片</td>
         <td>說明</td>
         <td>狀態</td>

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<h1 class="text-center">會員管理中心系統</h1>   
+<h1 class="text-center font-weight-bold  text-primary">會員管理中心系統</h1>   
 <div class="col- mx-auto d-flex justify-content-between">
 
 </div>

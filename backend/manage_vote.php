@@ -1,7 +1,9 @@
-<h1>列出所有的問題 <button>新增問題:D</button></h1>
-<a class="btn btn-primary rounded btn-sm" href="?do=add_subject_form">
-    新增問卷
-</a>
+<h1 class="text-center font-weight-bold  text-primary">問卷列表
+    <a class="btn btn-primary rounded btn-sm" href="?do=add_subject_form">
+        新增問卷+
+    </a>
+</h1>
+
 <?php
 $subjects = all('topics');
 
@@ -20,7 +22,7 @@ foreach ($subjects as $key => $value) {
     echo "<span class='d-inline-block col-md-1 text-center'>";
     echo $count[0]['總計'];
     echo "</span>";
-    
+
     //問卷顯示
     echo "<a href='../api/change_status_vote.php?id={$value['id']}'>";
     echo ($value['sho'] == 1) ? "顯示中" : "未上架";

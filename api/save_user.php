@@ -2,7 +2,6 @@
 //更新使用者資料
 
 
-
 $id=$_POST['id'];
 $account=$_POST['account'];
 $password=$_POST['password'];
