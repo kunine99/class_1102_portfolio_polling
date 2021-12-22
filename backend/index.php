@@ -13,7 +13,7 @@ if (!isset($_SESSION['user'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的問卷系統</title>
+  <title>問卷系統後台</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <style>
     .container {
@@ -23,9 +23,9 @@ if (!isset($_SESSION['user'])) {
 </head>
 
 <body>
-  <div class="jumbotron p-0" style="overflow:hidden;height:250px">
+  <div class="jumbotron p-0 mb-0" style="overflow:hidden;height:250px">
   <a href="index.php">
-        <div id="carouselExampleSlidesOnly" class="carousel slide  position-relative" data-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide position-relative" data-ride="carousel">
           <div class="carousel-inner position-absolute" style="top:-250px">
             <?php
             $images = all('ad', ['sh' => 1]);
@@ -49,11 +49,12 @@ if (!isset($_SESSION['user'])) {
   </div>
   </div>
 
-  <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div>
       <a class='px-2' href="?do=show_vote_list">問卷管理</a>
       <a class='px-2' href="?do=member">會員管理</a>
       <a class='px-2' href="?do=ad">廣告管理</a>
+      <a class='px-2' href="../index.php">回到前台首頁</a>
 
 
     </div>

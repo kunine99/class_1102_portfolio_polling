@@ -1,6 +1,6 @@
 <h1>列出所有的問題 <button>新增問題:D</button></h1>
 <a class="btn btn-primary rounded btn-sm" href="?do=add_subject_form">
-    新增或刪除問卷
+    新增問卷
 </a>
 <?php
 $subjects = all('topics');
@@ -9,7 +9,7 @@ foreach ($subjects as $key => $value) {
 
     echo "<li class='list-group-item'>";
     //題目
-    echo "<a class='d-inline-block col-md-8' href='index.php?do=vote&id={$value['id']}'>";
+    echo "<a class='d-inline-block col-md-6' href='index.php?do=vote&id={$value['id']}'>";
     echo $value['topic'];
     echo "</a>";
     //總投票數顯示
@@ -26,10 +26,17 @@ foreach ($subjects as $key => $value) {
     echo "<button class='btn btn-info'>管理</button>";
     echo "</a>";
 
+//刪除按鈕
+echo "<a href='?do=del_vote&id={$value['id']}' class='d-inline-block col-md-1 text-center'>";
+echo "<button class='btn btn-danger'>刪除</button>";
+echo "</a>";
+
     //看結果按鈕
     echo "<a href='../index.php?do=vote_result&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";
     echo "<button class='btn btn-primary'>觀看結果</button>";
     echo "</a>";
+
+
 
     echo "</li>";
 }

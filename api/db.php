@@ -2,7 +2,6 @@
 //  function pdo($db)
 //  {$dsn="mysql:host=localhost;charset=utf8;dbname=$db";
 //  return new PDO($dsn,'root','');
-
 // }
 
 //填資料庫名稱

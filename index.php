@@ -50,7 +50,9 @@
   </div>
 
 
-  <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'>
+  <nav class="navbar navbar-light " style="background-color: #e3f2fd;">
+  <!-- <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'> -->
+
     <div>&nbsp;</div>
     <?php
 
@@ -64,9 +66,9 @@
       echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
     ?>
       <div>
+        <a class="btn btn-sm btn-primary mx-1" href="index.php">回到首頁</a>
         <a class="btn btn-sm btn-primary mx-1" href="./api/edit_user.php?id=<?=$_SESSION['id']?>">編輯會員資料</a>
         <!-- <a href='edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>"; -->
-
         <a class="btn btn-sm btn-primary mx-1" href="logout.php">登出</a>
       </div>
 

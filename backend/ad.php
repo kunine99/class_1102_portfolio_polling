@@ -19,7 +19,7 @@
 </div>
 <div class="col-md-9">
 <h3 class="text-center">圖片列表</h3>
-<table class="table">
+<table class="table  table-hover">
     <tr>
         <td>圖片</td>
         <td>說明</td>

@@ -1,5 +1,3 @@
-
-
 <?php include_once "db.php";
 //更新使用者資料
 
@@ -22,8 +20,8 @@ $pdo->exec($update_users_sql);
 // echo "login更新<br>".$update_users_sql."<br>";
 // header("../backend/member.php");
 
-// 下判斷式，從前台進入的回index，後台進入的回member  
+// 下判斷式，從前台進入的回("/index.php")，後台進入的回("../backend/?do=member")
 // to("../index.php");
-
-to("../backend/?do=member");
+to ("../backend/?do=member");
+// to("/index.php");
 ?>

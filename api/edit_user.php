@@ -85,16 +85,3 @@ $user = $pdo->query($user_sql)->fetch();
 
 </div>
 
-
-<!-- 
-     <div class="list-group">
-                                     <input type="hidden" name="id" value='<?= $user['id']; ?>'>
-                                     <li class="list-group-item">帳號:<input type="text" name='account' value='<?= $user['account']; ?>'></li>
-                                     <li class="list-group-item">密碼:<input type="password" name='password' value='<?= $user['password']; ?>'></li>
-                                     <li class="list-group-item">姓名:<input type="text" name='name' value='<?= $user['name']; ?>'></li>
-                                     <li class="list-group-item">生日:<input type="date" name='birthday' value='<?= $user['birthday']; ?>'></li>
-                                     <li class="list-group-item">性別:<input type="text" name='gender' value='<?= $user['gender']; ?>'></li>
-                                     <li class="list-group-item">email:<input type="text" name='email' value='<?= $user['email']; ?>'></li>
-
-
-                                 </div> -->
