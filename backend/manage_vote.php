@@ -4,6 +4,8 @@
 </a>
 <?php
 $subjects = all('topics');
+
+
 echo "<ol class='list-group'>";
 foreach ($subjects as $key => $value) {
 
@@ -18,18 +20,22 @@ foreach ($subjects as $key => $value) {
     echo "<span class='d-inline-block col-md-1 text-center'>";
     echo $count[0]['總計'];
     echo "</span>";
+    
+    //問卷顯示
+    echo "<a href='../api/change_status_vote.php?id={$value['id']}'>";
+    echo ($value['sho'] == 1) ? "顯示中" : "未上架";
+    echo "</a>";
 
     //管理題目
-
-
     echo "<a href='?do=edit_subject&id={$value['id']}' class='d-inline-block col-md-1 text-center'>";
     echo "<button class='btn btn-info'>管理</button>";
     echo "</a>";
 
-//刪除按鈕
-echo "<a href='?do=del_vote&id={$value['id']}' class='d-inline-block col-md-1 text-center'>";
-echo "<button class='btn btn-danger'>刪除</button>";
-echo "</a>";
+
+    //刪除按鈕
+    echo "<a href='?do=del_vote&id={$value['id']}' class='d-inline-block col-md-1 text-center'>";
+    echo "<button class='btn btn-danger'>刪除</button>";
+    echo "</a>";
 
     //看結果按鈕
     echo "<a href='../index.php?do=vote_result&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";

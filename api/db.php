@@ -1,14 +1,9 @@
 <?php
-//  function pdo($db)
-//  {$dsn="mysql:host=localhost;charset=utf8;dbname=$db";
-//  return new PDO($dsn,'root','');
-// }
-
 //填資料庫名稱
-// $dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
+$dsn = "mysql:host=localhost;charset=utf8;dbname=mypolling"; 
 // $pdo = new PDO($dsn, 'root', '');
 
-$dsn = "mysql:host=localhost;charset=utf8;dbname=s1100411"; 
+// $dsn = "mysql:host=localhost;charset=utf8;dbname=s1100411"; 
 $pdo = new PDO($dsn, 'root', '');
 
 // $dsn = "mysql:host=localhost;charset=utf8;dbname=s1100411";
