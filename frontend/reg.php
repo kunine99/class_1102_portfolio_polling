@@ -41,11 +41,11 @@
                                 <tr>
                                     <td><i class="fas fa-stream">性別：</td>
                                     <td> 
-                                        <input type="radio" id="html" name="gender" value="男性">
+                                        <input type="radio" id="html" name="gender" value="1">
                                         <label for="man">男性</label>
-                                        <input type="radio" id="css" name="gender" value="女性">
+                                        <input type="radio" id="css" name="gender" value="2">
                                         <label for="woman">女性</label>
-                                        <input type="radio" id="javascript" name="gender" value="其他">
+                                        <input type="radio" id="javascript" name="gender" value="3">
                                         <label for="other">其他</label>
                                     </td>
                                 </tr>
