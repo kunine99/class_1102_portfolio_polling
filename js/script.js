@@ -1,4 +1,4 @@
-投票小動畫
+// 投票小動畫
 var animatipn = bodymovin.loadAnimation({
     container : document.getElementById('animContainer'),
     renderer : 'svg',
@@ -11,11 +11,11 @@ var animatipn = bodymovin.loadAnimation({
 
 
 
-var animatipn = bodymovin.loadAnimation({
-    container : document.getElementById('animWait'),
-    renderer : 'svg',
-    loop : true,
-    autoplay : true,
-    // with:100,
-    path:'https://assets9.lottiefiles.com/packages/lf20_omaZGe.json' //走場小動畫
-})
+// var animatipn = bodymovin.loadAnimation({
+//     container : document.getElementById('animWait'),
+//     renderer : 'svg',
+//     loop : true,
+//     autoplay : true,
+//     // with:100,
+//     path:'https://assets9.lottiefiles.com/packages/lf20_omaZGe.json' //走場小動畫
+// })

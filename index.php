@@ -10,10 +10,10 @@
   <title>問卷系統</title>
   <!-- 六角學院4代bst -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./css/style.css">
   <style>
     .container {
-      min-height: 544px;
+      min-height: 1555px;
     }
   </style>
 </head>
@@ -49,10 +49,9 @@
     </a>
   </div>
 
-
-  <nav class="navbar navbar-light " style="background-color: #e3f2fd;">
-  <!-- <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'> -->
-
+  <!-- <nav id="mySidenav" class="sidenav text-white" style=""> -->
+    
+    <nav id="mySidenav" class="sidenav text-white"  >
     <div>&nbsp;</div>
     <?php
 
@@ -65,30 +64,32 @@
     if (isset($_SESSION['user'])) {
       echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
     ?>
-      <div>
-        <a class="btn btn-sm btn-primary mx-1" href="index.php">回到首頁</a>
-        <a class="btn btn-sm btn-primary mx-1" href="./api/edit_user.php?id=<?=$_SESSION['id']?>">編輯會員資料</a>
+      <div> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+        <a class="btn btn-sm  mx-1" href="index.php">回到首頁</a>
+        <a class="btn btn-sm  mx-1" href="./api/edit_user.php?id=<?=$_SESSION['id']?>">編輯會員資料</a>
         <!-- <a href='edit_user.php?id={$user['id']}'><button class='btn btn-sm btn-success'>編輯</button></a>"; -->
-        <a class="btn btn-sm btn-primary mx-1" href="logout.php">登出</a>
+        <a class="btn btn-sm  mx-1" href="logout.php">登出</a>
       </div>
+      
+      <?php
 
-    <?php
-
-    } else {
-    ?>
-      <div>
-        <a class="btn btn-sm btn-primary mx-1" href="?do=login">會員登入</a>
-        <a class="btn btn-sm btn-info mx-1" href="?do=reg">註冊新會員</a>
+} else {
+  ?>
+      <div >
+        <a class="btn btn-sm  mx-1" href="?do=login">會員登入</a>
+        <a class="btn btn-sm  mx-1" href="?do=reg">註冊新會員</a>
       </div>
-    <?php
+      <?php
     }
     ?>
   </nav>
-
-
-
-  <div class="container">
-
+  
+  <span style="font-size:30px;cursor:pointer"  class="font-weight-bold  text-primary"  onclick="openNav()">&#9776; 開啟列表</span>
+  
+  
+  <div class="main">
     <?php
     // 如果有do我就用後面的變數，如果沒有do我就用add_subject_form
     // $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form';
@@ -123,6 +124,22 @@
   <!-- csnj/Home/Libraries/bodymovin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.8.1/lottie.min.js"></script>
   <script src="./js/script.js"></script>
+
+
+ <!-- 陰影的script w3c的How TO - Side Navigation -->
+  <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
 </body>
 
 </html>
