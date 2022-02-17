@@ -11,7 +11,7 @@ $gender=$_POST['gender'];
 $email=$_POST['email'];
 
 
-$update_users_sql="update `users` set `account`='$account',`password`='$password',`name`='$name',`email`='$email' where `id`='$id'";
+$update_users_sql="update `mypolling_users` set `account`='$account',`password`='$password',`name`='$name',`email`='$email' where `id`='$id'";
 $pdo->exec($update_users_sql);
 
 

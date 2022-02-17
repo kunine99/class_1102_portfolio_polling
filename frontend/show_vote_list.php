@@ -14,7 +14,7 @@ height: 150px;
 </div>
 
 <?php
-$subjects = all('topics', ['sho'=>1]);
+$subjects = all('mypolling_topics', ['sho'=>1]);
 if(empty($subjects)){
     echo "<p class='font-weight-bold text-primary display-4'>現在沒有進行中的問卷喔！</p>
     <p class='font-weight-bold text-primary display-4'>若有想新增的問卷請通知管理員:D</p>";
@@ -25,7 +25,7 @@ if(empty($subjects)){
     echo "<ol class='list-group'>";
 foreach ($subjects as $key => $value) {
     
-    if (rows('options', ['topic_id' => $value['id']]) > 0) {
+    if (rows('mypolling_options', ['topic_id' => $value['id']]) > 0) {
         echo "<li class='list-group-item'>";
         //題目
         //有登入的會員才能使用投票功能
@@ -39,7 +39,7 @@ foreach ($subjects as $key => $value) {
         }
 
         //總投票數顯示
-        $count = q("select sum(`count`) as '總計' from `options` where `topic_id`='{$value['id']}'");
+        $count = q("select sum(`count`) as '總計' from `mypolling_options` where `topic_id`='{$value['id']}'");
         echo "<span class='d-inline-block col-md-3 text-center'>";
         echo "<span class='badge badge-primary badge-pill d-inline-block'>";
         // echo "<span class='badge badge-primary d-inline-block col-md-12 badge-pill justify-content-between'>";

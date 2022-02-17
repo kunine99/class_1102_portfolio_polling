@@ -12,7 +12,7 @@
 // $pdo=new PDO($dsn,'root','');
 // $sql="SELECT * FROM `users`";
 
-$sql="select `users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `users` where `id` > 0;";
+$sql="select `mypolling_users`.`id`,`account`,`name`,`birthday`,`gender`,`email` from `mypolling_users` where `id` > 0;";
 $users=$pdo->query($sql)->fetchALL();
 
 

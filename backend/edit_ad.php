@@ -1,6 +1,6 @@
 <h2 class="text-center font-weight-bold  text-primary">編輯輪播圖</h2>
 <?php
-$ad=find('ad',$_GET['id']);
+$ad=find('mypolling_ad',$_GET['id']);
 
 
 ?>

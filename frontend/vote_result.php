@@ -2,10 +2,10 @@
 <?php include_once "./api/db.php"; ?>
 <?php
 $sql = "select * 
-      from `topics`,
-           `options` 
-      where `topics`.`id`=`options`.`topic_id` AND 
-            `topics`.`id`='{$_GET['id']}'";
+      from `mypolling_topics`,
+           `mypolling_options` 
+      where `mypolling_topics`.`id`=`mypolling_options`.`topic_id` AND 
+            `mypolling_topics`.`id`='{$_GET['id']}'";
 
 $rows = q($sql);
 ?>
@@ -58,7 +58,7 @@ $rows = q($sql);
         //   }
         // ?>
         <?php
-        $rows = all('options', ['topic_id' => "{$_GET['id']}"]);
+        $rows = all('mypolling_options', ['topic_id' => "{$_GET['id']}"]);
         foreach ($rows as $row) {
           echo "['" . $row['opt'] . "'," . $row['count'] . "] ,";
         }

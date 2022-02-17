@@ -7,11 +7,11 @@ if(isset($_SESSION['error'])){
 
 //使用rows自訂函式來計算資料表中是否有符合帳號密碼的資料
 //有則表示帳密正確，無則表示帳密有錯
-if(rows('users',$_POST)>0){
+if(rows('mypolling_users',$_POST)>0){
 
     //帳密正確時，在session中紀錄登入者帳號，以利其他用途
     $_SESSION['user']=$_POST['account'];
-    $user=find('users',['account'=>$_POST['account']]);
+    $user=find('mypolling_users',['account'=>$_POST['account']]);
     $_SESSION['id']=$user['id'];
 
     //登入檢查完成，將頁面導回首頁

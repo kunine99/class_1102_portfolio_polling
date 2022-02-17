@@ -1,7 +1,7 @@
 <?php
 
 $subject = find('topics', $_GET['id']);
-$options = all('options', ['topic_id' => $_GET['id']]);
+$options = all('mypolling_options', ['topic_id' => $_GET['id']]);
 
 ?>
 

@@ -27,7 +27,7 @@
         <td>管理</td>
     </tr>
 <?php 
-$rows=all('ad');
+$rows=all('mypolling_ad');
 foreach($rows as $row){
 echo "<tr>";
 echo "<td>";
@@ -40,7 +40,8 @@ echo ($row['sh']==1)?"顯示中":"未上架";
 echo "</a>";
 echo "</td>";
 echo "<td>";
-echo "<a class='btn btn-info mx-1' href='?do=edit_ad&id={$row['id']}'>修改</a>";
+echo "<a class='btn btn-info' href='?do=edit_ad&id={$row['id']}'>修改</a>";
+echo "<button>重新上傳</button>";
 echo "<a class='btn btn-danger' href='../api/del_ad.php?id={$row['id']}'>刪除</a>";
 "</td>";
  echo "</tr>";

@@ -27,7 +27,7 @@
           <?php
 
           //取得資料表中狀態為1的廣告圖片
-          $images = all('ad', ['sh' => 1]);
+          $images = all('mypolling_ad', ['sh' => 1]);
 
           //使用迴圈來將每一筆廣告圖片依照html的格式顯示在網頁上
           foreach ($images as $key => $image) {
@@ -111,7 +111,7 @@
 
     ?>
   </div>
-  <div class="p-3 text-center text-light bg-primary  fixed-bottom">@ 2021 泰山php班第2期 版權所有、歡迎盜用</div>
+  <div class="p-3 text-center text-light bg-primary">@ 2021 泰山php班第2期 版權所有、歡迎盜用</div>
   <!-- 
     要控制元件必須要有東西存在，如果前面東西還沒存在就放就沒用
     所以後來習慣大家就先放後面了

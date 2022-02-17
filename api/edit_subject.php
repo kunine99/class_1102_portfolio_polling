@@ -12,7 +12,7 @@ $topic=$_POST['topic'];
 $topic_id=$_POST['topic_id'];
 
 //使用update自訂函式來更新問卷主題內容
-update('topics',['topic'=>$topic],['id'=>$topic_id]);
+update('mypolling_topics',['topic'=>$topic],['id'=>$topic_id]);
 
 //依據表單傳過來的選項內容，取得選項內容，為一個陣列
 $options=$_POST['options'];
@@ -25,12 +25,12 @@ foreach ($options as $key => $opt) {
     // if(array_key_exists($key,$opt_id)){
     //判斷選項是否有內容，有則更新，無則刪除
     if($opt!=""){
-        update('options',['opt'=>$opt],['id'=>$opt_id[$key]]);
+        update('mypolling_options',['opt'=>$opt],['id'=>$opt_id[$key]]);
     }else{
         // insert('options',['opt'=>$opt,'topic_id'=>$topic_id]);
         // 如果有空白資料讓你編輯，但你不打任何東西要怎麼辦?
         //db.php 有寫好的函式
-        del('options',$opt_id[$key]);
+        del('mypolling_options',$opt_id[$key]);
     }
 }
 

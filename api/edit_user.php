@@ -2,7 +2,7 @@
 
 //編輯會員資料
 $user_id = $_GET['id'];  //login資料表的id .member資料表login_id
-$user_sql = "select * from `users` where  `users`.`id`='$user_id'";
+$user_sql = "select * from `mypolling_users` where  `mypolling_users`.`id`='$user_id'";
 // echo $user_sql;
 $user = $pdo->query($user_sql)->fetch();
 

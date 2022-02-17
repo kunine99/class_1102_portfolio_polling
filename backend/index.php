@@ -30,7 +30,7 @@ if (!isset($_SESSION['user'])) {
         <div id="carouselExampleSlidesOnly" class="carousel slide position-relative" data-ride="carousel">
           <div class="carousel-inner position-absolute" style="top:-250px">
             <?php
-            $images = all('ad', ['sh' => 1]);
+            $images = all('mypolling_ad', ['sh' => 1]);
 
             foreach ($images as $key => $image) {
               if ($key == 0) {

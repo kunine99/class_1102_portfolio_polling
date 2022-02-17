@@ -10,7 +10,7 @@ include_once "db.php";
 $topic=['topic'=>$_POST['subject']];
 
 //使用insert自訂函式來新增主題
-insert('topics',$topic);
+insert('mypolling_topics',$topic);
 
 
 // // print_r($_POST);

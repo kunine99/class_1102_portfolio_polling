@@ -1,9 +1,9 @@
 <!-- 投票頁面 -->
 <?php
 $id = $_GET['id'];
-$subject = find('topics', $id);
+$subject = find('mypolling_topics', $id);
 
-$options = all('options', ['topic_id' => $id]);
+$options = all('mypolling_options', ['topic_id' => $id]);
 
 ?>
 

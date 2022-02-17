@@ -5,7 +5,7 @@
 </h1>
 
 <?php
-$subjects = all('topics');
+$subjects = all('mypolling_topics');
 
 
 echo "<ol class='list-group'>";
@@ -18,7 +18,7 @@ foreach ($subjects as $key => $value) {
     echo "</a>";
     //總投票數顯示
 
-    $count = q("select sum(`count`) as '總計' from `options` where `topic_id`='{$value['id']}'");
+    $count = q("select sum(`count`) as '總計' from `mypolling_options` where `topic_id`='{$value['id']}'");
     echo "<span class='d-inline-block col-md-1 text-center'>";
     echo $count[0]['總計'];
     echo "</span>";
